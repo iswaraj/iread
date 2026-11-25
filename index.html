@@ -319,7 +319,7 @@
       align-items: center;
       justify-content: center;
       gap: var(--space-2);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       padding: var(--space-3) var(--space-6);
       border-radius: var(--radius-md);
@@ -554,7 +554,7 @@
       color: var(--text-secondary);
       transition: all var(--transition-fast);
       text-decoration: none;
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       display: inline-flex;
       align-items: center;
@@ -1558,7 +1558,7 @@
       color: var(--accent-primary);
       text-decoration: none;
       transition: opacity var(--transition-fast);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       padding: var(--space-2) 0;
     }
@@ -1607,7 +1607,7 @@
       color: var(--text-secondary);
       cursor: pointer;
       transition: all var(--transition-fast);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       display: inline-flex;
       align-items: center;
@@ -1867,7 +1867,7 @@
       font-weight: 500;
       cursor: pointer;
       transition: all var(--transition-fast);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       align-self: flex-start;
     }
@@ -1897,7 +1897,7 @@
       font-weight: 500;
       text-decoration: none;
       transition: all var(--transition-fast);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       align-self: flex-start;
     }
@@ -2123,7 +2123,7 @@
       color: var(--text-muted);
       cursor: pointer;
       transition: all var(--transition-fast);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       display: inline-flex;
       align-items: center;
@@ -2140,6 +2140,550 @@
       width: 14px;
       height: 14px;
     }
+
+    /* @@ANCHOR:CATALOGUE_CSS_START */
+    /* === CHAPTER IV: CURATED BOOK CATALOGUES === */
+    #section-catalogue {
+      padding: var(--space-16) 0;
+      background: var(--bg-elevated);
+    }
+
+    @media (min-width: 768px) {
+      #section-catalogue {
+        padding: var(--space-20) 0;
+      }
+    }
+
+    .catalogue-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-8);
+    }
+
+    .catalogue-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-6);
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .catalogue-grid.count-multi {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .catalogue-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--accent-primary);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      min-width: 0;
+      transition: box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+
+    .catalogue-card:hover {
+      box-shadow: var(--shadow-book);
+      border-color: var(--border-strong);
+      border-top-color: var(--accent-primary);
+    }
+
+    .catalogue-card-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .catalogue-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .catalogue-card-title-group {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-width: 0;
+    }
+
+    .catalogue-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: var(--bg-elevated);
+      color: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .catalogue-card-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .catalogue-card-title {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+
+    .catalogue-count-pill {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .catalogue-card-tagline {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .catalogue-books-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .catalogue-grid.count-1 .catalogue-books-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-5);
+      }
+    }
+
+    .catalogue-book-item {
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+      padding: var(--space-3);
+      border-radius: var(--radius-lg);
+      background: var(--bg-page);
+      border: 1px solid var(--border-subtle);
+      min-width: 0;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .catalogue-book-item:hover {
+      border-color: var(--border-strong);
+    }
+
+    .catalogue-book-thumb {
+      width: 48px;
+      height: 70px;
+      border-radius: 3px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.16), inset 3px 0 6px rgba(0, 0, 0, 0.2);
+      background: var(--accent-primary);
+    }
+
+    @media (min-width: 768px) {
+      .catalogue-book-thumb {
+        width: 54px;
+        height: 78px;
+      }
+    }
+
+    .catalogue-book-spine {
+      width: 48px;
+      height: 70px;
+      border-radius: 3px;
+      flex-shrink: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.05) 18%, transparent 28%), var(--accent-primary);
+      color: var(--accent-gold);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .catalogue-book-spine {
+        width: 54px;
+        height: 78px;
+      }
+    }
+
+    .catalogue-book-body {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .catalogue-book-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .catalogue-book-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    .catalogue-book-rating {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 2px 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .catalogue-book-author {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .catalogue-book-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-top: 2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .catalogue-book-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      align-self: flex-start;
+      min-height: 44px;
+      padding: 4px 2px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      text-decoration: none;
+      transition: opacity var(--transition-fast);
+    }
+
+    .catalogue-book-link:hover {
+      opacity: 0.78;
+      text-decoration: underline;
+    }
+
+    .catalogue-book-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .catalogue-expand-btn {
+      align-self: flex-start;
+      min-height: 44px;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-strong);
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+
+    .catalogue-expand-btn:hover {
+      background: var(--accent-primary);
+      color: var(--accent-primary-fg);
+      border-color: var(--accent-primary);
+    }
+    /* @@ANCHOR:CATALOGUE_CSS_END */
+
+    /* @@ANCHOR:WEBSERIES_CSS_START */
+    /* === CHAPTER V: WEB SERIES SUGGESTIONS === */
+    #section-webseries {
+      padding: var(--space-16) 0;
+      background: var(--bg-page);
+    }
+
+    @media (min-width: 768px) {
+      #section-webseries {
+        padding: var(--space-20) 0;
+      }
+    }
+
+    .ws-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-8);
+    }
+
+    .ws-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-6);
+    }
+
+    .ws-grid.count-1 {
+      max-width: 680px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+      .ws-grid.count-2,
+      .ws-grid.count-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1120px) {
+      .ws-grid.count-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .ws-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+    }
+
+    .ws-card:hover {
+      box-shadow: var(--shadow-book);
+      transform: translateY(-3px);
+      border-color: var(--border-strong);
+    }
+
+    .ws-poster-wrap {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--bg-elevated);
+      flex-shrink: 0;
+    }
+
+    .ws-poster-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-slow);
+    }
+
+    .ws-card:hover .ws-poster-img {
+      transform: scale(1.03);
+    }
+
+    .ws-poster-vignette {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(19, 17, 16, 0.42) 0%, transparent 45%, rgba(19, 17, 16, 0.25) 100%);
+      pointer-events: none;
+    }
+
+    .ws-poster-fallback {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent-primary) 0%, #161412 100%);
+      color: var(--accent-gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-4);
+      text-align: center;
+    }
+
+    .ws-poster-fallback-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ws-poster-fallback-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .ws-poster-fallback-mono {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .ws-pill-platform,
+    .ws-pill-meta {
+      position: absolute;
+      top: var(--space-3);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      background: rgba(19, 17, 16, 0.82);
+      color: #FAF7F2;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      max-width: calc(50% - var(--space-4));
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .ws-pill-platform {
+      left: var(--space-3);
+    }
+
+    .ws-pill-meta {
+      right: var(--space-3);
+      color: #F3D186;
+    }
+
+    .ws-card-body {
+      padding: var(--space-5);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .ws-card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .ws-card-genre {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      font-weight: 500;
+    }
+
+    .ws-card-rating {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 2px 7px;
+      white-space: nowrap;
+    }
+
+    .ws-card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .ws-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .ws-card-footer {
+      margin-top: var(--space-2);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+    }
+
+    .ws-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: var(--space-1) 0;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      text-decoration: none;
+      transition: opacity var(--transition-fast);
+    }
+
+    .ws-card-link:hover {
+      opacity: 0.78;
+      text-decoration: underline;
+    }
+
+    .ws-card-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ws-load-more-wrap {
+      text-align: center;
+      margin-top: var(--space-10);
+    }
+    /* @@ANCHOR:WEBSERIES_CSS_END */
 
     /* @@ANCHOR:CSS_PUBLIC_END */
 
@@ -2225,7 +2769,7 @@
       align-items: center;
       gap: var(--space-2);
       padding: var(--space-2) var(--space-4);
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       background: var(--accent-primary);
       color: var(--accent-primary-fg);
@@ -2936,7 +3480,7 @@
     }
 
     .admin-btn-sm {
-      min-height: 44px;
+      min-height: 45px;
       min-width: 44px;
       padding: var(--space-2) var(--space-4);
       font-size: 0.875rem;
@@ -3596,6 +4140,69 @@
       color: var(--text-primary);
     }
 
+    /* @@ANCHOR:CATALOGUE_ADMIN_CSS_START */
+    .admin-vis-badge.is-warn {
+      color: #92400e;
+      background: #fef3c7;
+      border-color: #f59e0b;
+    }
+
+    [data-theme="dark"] .admin-vis-badge.is-warn {
+      color: #fde68a;
+      background: rgba(245, 158, 11, 0.18);
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+
+    .admin-cat-expanded {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .admin-cat-nested {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      background: var(--bg-elevated);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .admin-cat-book-row {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-3);
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .admin-cat-book-form {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: var(--space-3);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .admin-char-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .admin-char-count {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    /* @@ANCHOR:CATALOGUE_ADMIN_CSS_END */
+
     /* @@ANCHOR:CSS_ADMIN_END */
   </style>
 </head>
@@ -3714,6 +4321,8 @@
           <a href="#section-featured" class="nav-link" id="nav-featured">Weekly Shelf</a>
           <a href="#section-instagram" class="nav-link" id="nav-instagram">Bookstagram</a>
           <a href="#section-blog" class="nav-link" id="nav-blog">Journal</a>
+          <a href="#section-catalogue" class="nav-link" id="nav-catalogue">Catalogue</a>
+          <a href="#section-webseries" class="nav-link" id="nav-webseries">Web Series</a>
           <a href="#section-contact" class="nav-link" id="nav-contact">Collaborate</a>
         </nav>
 
@@ -3808,6 +4417,30 @@
         <div id="blog-mount"></div>
       </div>
     </section>
+
+    <!-- @@ANCHOR:CATALOGUE_HTML_START -->
+    <!-- Chapter divider: Book Catalogue -->
+    <div id="chapter-divider-catalogue"></div>
+
+    <!-- Curated Book Catalogues Section -->
+    <section id="section-catalogue" aria-label="Curated Book Catalogues" style="display:none">
+      <div class="container">
+        <div id="catalogue-mount"></div>
+      </div>
+    </section>
+    <!-- @@ANCHOR:CATALOGUE_HTML_END -->
+
+    <!-- @@ANCHOR:WEBSERIES_HTML_START -->
+    <!-- Chapter divider: Web Series -->
+    <div id="chapter-divider-webseries"></div>
+
+    <!-- Web Series Suggestions Section -->
+    <section id="section-webseries" aria-label="Web Series Suggestions" style="display:none">
+      <div class="container">
+        <div id="webseries-mount"></div>
+      </div>
+    </section>
+    <!-- @@ANCHOR:WEBSERIES_HTML_END -->
 
     <!-- Chapter divider: Contact -->
     <div id="chapter-divider-contact"></div>
@@ -4120,6 +4753,154 @@
           }
         ]
       },
+      // @@ANCHOR:CATALOGUE_DATA_START
+      catalogues: {
+        enabled: true,
+        navLabel: "Catalogue",
+        chapterLabel: "CURATED BOOK CATALOGUE",
+        sectionTitle: "Reading Lists by Genre",
+        sectionSubtitle: "Quick, spoiler-free book recommendations organized by genre and mood.",
+        items: [
+          {
+            id: "cat-fiction",
+            visible: true,
+            name: "Fiction",
+            tagline: "Evocative storytelling, rich characters, and unforgettable prose.",
+            icon: "book",
+            books: [
+              {
+                id: "cbook-1",
+                visible: true,
+                title: "The God of Small Things",
+                author: "Arundhati Roy",
+                shortDescription: "A lush, heartbreaking family saga set in Kerala, told in luminous prose.",
+                coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=300&q=80",
+                rating: 5,
+                externalLink: "https://www.goodreads.com/"
+              },
+              {
+                id: "cbook-2",
+                visible: true,
+                title: "Pachinko",
+                author: "Min Jin Lee",
+                shortDescription: "A sweeping four-generation epic of resilience, identity, and family sacrifice.",
+                coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=300&q=80",
+                rating: 4.5,
+                externalLink: "https://www.goodreads.com/"
+              }
+            ]
+          },
+          {
+            id: "cat-nonfiction",
+            visible: true,
+            name: "Non-Fiction",
+            tagline: "Sharp essays, memoirs, and ideas that shift how you see the world.",
+            icon: "feather",
+            books: [
+              {
+                id: "cbook-3",
+                visible: true,
+                title: "When Breath Becomes Air",
+                author: "Paul Kalanithi",
+                shortDescription: "A neurosurgeon's deeply moving meditation on mortality, meaning, and living fully.",
+                coverImage: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=300&q=80",
+                rating: 5,
+                externalLink: "https://www.goodreads.com/"
+              },
+              {
+                id: "cbook-4",
+                visible: true,
+                title: "Atomic Habits",
+                author: "James Clear",
+                shortDescription: "Practical, research-backed strategies for building tiny habits that compound.",
+                coverImage: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=300&q=80",
+                rating: 4.5,
+                externalLink: "https://www.goodreads.com/"
+              }
+            ]
+          },
+          {
+            id: "cat-thrillers",
+            visible: true,
+            name: "Mystery & Thrillers",
+            tagline: "Atmospheric slow burns and clever twists best read past midnight.",
+            icon: "sparkles",
+            books: [
+              {
+                id: "cbook-5",
+                visible: true,
+                title: "The Silent Patient",
+                author: "Alex Michaelides",
+                shortDescription: "A famous painter stops speaking after a shocking crime—until one therapist digs deeper.",
+                coverImage: "",
+                rating: 4,
+                externalLink: ""
+              },
+              {
+                id: "cbook-6",
+                visible: true,
+                title: "And Then There Were None",
+                author: "Agatha Christie",
+                shortDescription: "Ten strangers on a secluded island in the undisputed gold standard of locked-room mysteries.",
+                coverImage: "",
+                rating: 5,
+                externalLink: ""
+              }
+            ]
+          }
+        ]
+      },
+      // @@ANCHOR:CATALOGUE_DATA_END
+      // @@ANCHOR:WEBSERIES_DATA_START
+      webSeries: {
+        enabled: true,
+        navLabel: "Web Series",
+        chapterLabel: "SCREEN & STORYTELLING",
+        sectionTitle: "Web Series Worth Bingeing",
+        sectionSubtitle: "Gripping shows, book-to-screen adaptations, and slow-burn dramas I wholeheartedly recommend.",
+        items: [
+          {
+            id: "ws-1",
+            visible: true,
+            title: "Dark",
+            platform: "Netflix",
+            genre: "Sci-Fi Mystery",
+            metaTag: "3 Seasons",
+            rating: 5,
+            posterImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80",
+            shortDescription: "A masterclass in puzzle-box storytelling—three intertwined timelines, unforgettable atmosphere, and a finale that earns every twist.",
+            watchLink: "https://www.imdb.com/",
+            watchLinkLabel: "View Details"
+          },
+          {
+            id: "ws-2",
+            visible: true,
+            title: "Panchayat",
+            platform: "Prime Video",
+            genre: "Slice of Life",
+            metaTag: "Comedy Drama",
+            rating: 4.5,
+            posterImage: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=80",
+            shortDescription: "Warm, witty, and deeply human storytelling from rural India that feels like reading a comfort novel on a rainy evening.",
+            watchLink: "https://www.imdb.com/",
+            watchLinkLabel: "View Details"
+          },
+          {
+            id: "ws-3",
+            visible: true,
+            title: "Severance",
+            platform: "Apple TV+",
+            genre: "Psychological Thriller",
+            metaTag: "Must Watch",
+            rating: 5,
+            posterImage: "",
+            shortDescription: "Razor-sharp satire meets eerie mystery in an office where employees surgically split their work and personal memories.",
+            watchLink: "",
+            watchLinkLabel: "View Details"
+          }
+        ]
+      },
+      // @@ANCHOR:WEBSERIES_DATA_END
       contact: {
         enabled: true,
         chapterLabel: "CORRESPONDENCE & COLLABS",
@@ -4495,6 +5276,26 @@
         });
       }
 
+      function normalizeSitePayload(raw) {
+        var clean = deepMerge(DEFAULT_SITE_DATA, raw || {});
+        if (!clean.catalogues || typeof clean.catalogues !== 'object') {
+          clean.catalogues = deepMerge(DEFAULT_SITE_DATA.catalogues, {});
+        }
+        if (!Array.isArray(clean.catalogues.items)) {
+          clean.catalogues.items = [];
+        }
+        clean.catalogues.items.forEach(function (c) {
+          if (c && !Array.isArray(c.books)) c.books = [];
+        });
+        if (!clean.webSeries || typeof clean.webSeries !== 'object') {
+          clean.webSeries = deepMerge(DEFAULT_SITE_DATA.webSeries, {});
+        }
+        if (!Array.isArray(clean.webSeries.items)) {
+          clean.webSeries.items = [];
+        }
+        return clean;
+      }
+
       /**
        * Fetches site_config (id = 'main') from Supabase with a 4s AbortController timeout.
        */
@@ -4525,7 +5326,7 @@
               ok: true,
               empty: true,
               payload: null,
-              merged: deepMerge(DEFAULT_SITE_DATA, {})
+              merged: normalizeSitePayload({})
             };
           }
 
@@ -4535,7 +5336,7 @@
             ok: true,
             empty: false,
             payload: payload,
-            merged: deepMerge(DEFAULT_SITE_DATA, payload)
+            merged: normalizeSitePayload(payload)
           };
         } catch (err) {
           return {
@@ -4554,7 +5355,7 @@
       async function bootLoad(onImmediateRender, onFreshRender) {
         if (!isCloudConfigured()) {
           var demo = getDemoData();
-          var demoMerged = deepMerge(DEFAULT_SITE_DATA, demo || {});
+          var demoMerged = normalizeSitePayload(demo || {});
           if (typeof onImmediateRender === 'function') {
             onImmediateRender(demoMerged, { mode: 'demo', source: demo ? 'localStorage' : 'default' });
           }
@@ -4564,7 +5365,7 @@
         var cached = getCachedCloudData();
         var cachedJson = cached ? JSON.stringify(cached) : '';
         if (cached && typeof onImmediateRender === 'function') {
-          onImmediateRender(deepMerge(DEFAULT_SITE_DATA, cached), { mode: 'supabase', source: 'cache' });
+          onImmediateRender(normalizeSitePayload(cached), { mode: 'supabase', source: 'cache' });
         }
 
         var fresh = await fetchCloudSiteData(FETCH_TIMEOUT_MS);
@@ -4579,21 +5380,21 @@
         }
 
         if (!cached) {
-          var fallbackData = deepMerge(DEFAULT_SITE_DATA, {});
+          var fallbackData = normalizeSitePayload({});
           if (typeof onFreshRender === 'function') {
             onFreshRender(fallbackData, { mode: 'supabase', source: 'fallback', error: fresh.error || '' });
           }
           return { mode: 'supabase', data: fallbackData, error: fresh.error };
         }
 
-        return { mode: 'supabase', data: deepMerge(DEFAULT_SITE_DATA, cached) };
+        return { mode: 'supabase', data: normalizeSitePayload(cached) };
       }
 
       /**
        * Saves normalized SITE_DATA to Supabase (when configured & authenticated) or localStorage (Demo Mode).
        */
       async function saveSiteData(siteData) {
-        var clean = deepMerge(DEFAULT_SITE_DATA, siteData || {});
+        var clean = normalizeSitePayload(siteData || {});
         clean.schemaVersion = 2;
         if (!clean.meta) clean.meta = {};
         clean.meta.updatedAt = new Date().toISOString();
@@ -4918,6 +5719,11 @@
       var blogPage = 1;
       var blogFilter = 'All';
       var BLOG_PAGE_SIZE = 6;
+      var catalogueFilter = 'all';
+      var expandedCatalogues = {};
+      var wsFilter = 'All';
+      var wsPage = 1;
+      var WS_PAGE_SIZE = 6;
       var igEmbedLoaded = false;
       var eventsBound = false;
       var starGradCounter = 0;
@@ -4942,7 +5748,9 @@
         external: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
         arrowRight: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
         copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
-        check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>'
+        check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>',
+        flame: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+        film: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>'
       };
 
       // ---- HELPERS ----
@@ -5039,12 +5847,50 @@
         });
       }
 
+      function normalizeCatalogues(d) {
+        if (!d || !d.catalogues || typeof d.catalogues !== 'object') return;
+        if (!Array.isArray(d.catalogues.items)) d.catalogues.items = [];
+        d.catalogues.items.forEach(function (cat) {
+          if (cat && !Array.isArray(cat.books)) cat.books = [];
+        });
+      }
+
+      function getVisibleCatalogues(d) {
+        if (!d || !d.catalogues || !d.catalogues.enabled) return [];
+        var list = Array.isArray(d.catalogues.items) ? d.catalogues.items : [];
+        var out = [];
+        list.forEach(function (cat) {
+          if (!cat || cat.visible !== true) return;
+          var books = (Array.isArray(cat.books) ? cat.books : []).filter(function (b) {
+            return b && b.visible === true && typeof b.title === 'string' && b.title.trim() !== '';
+          });
+          if (books.length > 0) {
+            out.push({ catalogue: cat, books: books });
+          }
+        });
+        return out;
+      }
+
+      function getVisibleWebSeries(d) {
+        if (!d || !d.webSeries || !d.webSeries.enabled) return [];
+        var list = Array.isArray(d.webSeries.items) ? d.webSeries.items : [];
+        return list.filter(function (item) {
+          return item && item.visible === true && typeof item.title === 'string' && item.title.trim() !== '';
+        });
+      }
+
       function isContactVisible(d) {
         return !!(d && d.contact && d.contact.enabled);
       }
 
       function getVisibleChapters(d) {
         var l = (d && d.uiLabels) || {};
+        var catNavLabel = (d && d.catalogues && d.catalogues.navLabel && d.catalogues.navLabel.trim())
+          ? d.catalogues.navLabel.trim()
+          : 'Catalogue';
+        var wsNavLabel = (d && d.webSeries && d.webSeries.navLabel && d.webSeries.navLabel.trim())
+          ? d.webSeries.navLabel.trim()
+          : 'Web Series';
         var chapters = [];
         if (getVisibleBooks(d).length > 0) {
           chapters.push({ key: 'featuredBooks', id: 'section-featured', dividerId: 'chapter-divider-featured', navId: 'nav-featured', label: l.navFeatured || 'Weekly Shelf' });
@@ -5054,6 +5900,12 @@
         }
         if (getVisibleBlogPosts(d).length > 0) {
           chapters.push({ key: 'blog', id: 'section-blog', dividerId: 'chapter-divider-blog', navId: 'nav-blog', label: l.navBlog || 'Journal' });
+        }
+        if (getVisibleCatalogues(d).length > 0) {
+          chapters.push({ key: 'catalogues', id: 'section-catalogue', dividerId: 'chapter-divider-catalogue', navId: 'nav-catalogue', label: catNavLabel });
+        }
+        if (getVisibleWebSeries(d).length > 0) {
+          chapters.push({ key: 'webSeries', id: 'section-webseries', dividerId: 'chapter-divider-webseries', navId: 'nav-webseries', label: wsNavLabel });
         }
         if (isContactVisible(d)) {
           chapters.push({ key: 'contact', id: 'section-contact', dividerId: 'chapter-divider-contact', navId: 'nav-contact', label: l.navContact || 'Collaborate' });
@@ -5068,7 +5920,7 @@
       function renderChapterNumerals(d) {
         var data = d || SITE_DATA;
         if (!data) return;
-        var allDividers = ['chapter-divider-featured', 'chapter-divider-instagram', 'chapter-divider-blog', 'chapter-divider-contact'];
+        var allDividers = ['chapter-divider-featured', 'chapter-divider-instagram', 'chapter-divider-blog', 'chapter-divider-catalogue', 'chapter-divider-webseries', 'chapter-divider-contact'];
         allDividers.forEach(function (divId) { setHTML(divId, ''); });
 
         var visibleChapters = getVisibleChapters(data);
@@ -5173,6 +6025,8 @@
           'nav-featured': l.navFeatured || 'Weekly Shelf',
           'nav-instagram': l.navInstagram || 'Bookstagram',
           'nav-blog': l.navBlog || 'Journal',
+          'nav-catalogue': (d.catalogues && d.catalogues.navLabel && d.catalogues.navLabel.trim()) ? d.catalogues.navLabel.trim() : 'Catalogue',
+          'nav-webseries': (d.webSeries && d.webSeries.navLabel && d.webSeries.navLabel.trim()) ? d.webSeries.navLabel.trim() : 'Web Series',
           'nav-contact': l.navContact || 'Collaborate'
         };
         Object.keys(navMap).forEach(function (id) {
@@ -5187,6 +6041,8 @@
           'nav-featured': getVisibleBooks(d).length > 0,
           'nav-instagram': getVisibleIgPosts(d).length > 0,
           'nav-blog': getVisibleBlogPosts(d).length > 0,
+          'nav-catalogue': getVisibleCatalogues(d).length > 0,
+          'nav-webseries': getVisibleWebSeries(d).length > 0,
           'nav-contact': isContactVisible(d)
         };
         Object.keys(visibilityMap).forEach(function (navId) {
@@ -5610,6 +6466,260 @@
         setHTML('blog-mount', html);
       }
 
+      // @@ANCHOR:CATALOGUE_RENDERER_START
+      // ---- CURATED BOOK CATALOGUES RENDER (CHAPTER IV) ----
+      function getBookInitials(title) {
+        var words = String(title || 'BK').trim().split(/\s+/).filter(Boolean);
+        if (words.length >= 2) {
+          return (words[0].charAt(0) + words[1].charAt(0)).toUpperCase();
+        }
+        return String(title || 'BK').trim().slice(0, 2).toUpperCase() || 'BK';
+      }
+
+      function hasValidImgSrc(url) {
+        if (typeof url !== 'string') return false;
+        var trimmed = url.trim();
+        if (!trimmed) return false;
+        if (/^data:image\/(png|jpe?g|webp|gif);base64,[A-Za-z0-9+/=]+$/i.test(trimmed)) return true;
+        return Boolean(normalizeUrl(trimmed));
+      }
+
+      function renderCatalogue(d) {
+        var data = d || SITE_DATA;
+        if (!data) return;
+        var catCfg = data.catalogues || {};
+        var visibleEntries = getVisibleCatalogues(data);
+        if (visibleEntries.length === 0) {
+          hide('section-catalogue');
+          setHTML('catalogue-mount', '');
+          return;
+        }
+
+        show('section-catalogue');
+        var accentColor = getAccentColor();
+
+        if (catalogueFilter !== 'all' && !visibleEntries.some(function (entry) { return entry.catalogue.id === catalogueFilter; })) {
+          catalogueFilter = 'all';
+        }
+
+        var filterHtml = '';
+        if (visibleEntries.length >= 2) {
+          var pills = '<button type="button" class="filter-pill catalogue-filter-pill' + (catalogueFilter === 'all' ? ' active' : '') + '" data-catalogue-filter="all" aria-pressed="' + (catalogueFilter === 'all' ? 'true' : 'false') + '">All Genres</button>';
+          visibleEntries.forEach(function (entry) {
+            var c = entry.catalogue;
+            var isAct = catalogueFilter === c.id;
+            pills += '<button type="button" class="filter-pill catalogue-filter-pill' + (isAct ? ' active' : '') + '" data-catalogue-filter="' + escapeHTML(c.id || '') + '" aria-pressed="' + (isAct ? 'true' : 'false') + '">' + escapeHTML(c.name || '') + '</button>';
+          });
+          filterHtml = '<div class="catalogue-filter-pills" role="group" aria-label="Filter reading lists by genre">' + pills + '</div>';
+        }
+
+        var displayed = catalogueFilter === 'all'
+          ? visibleEntries
+          : visibleEntries.filter(function (entry) { return entry.catalogue.id === catalogueFilter; });
+
+        var gridClass = displayed.length === 1 ? 'count-1' : 'count-multi';
+
+        var cardsHtml = '';
+        displayed.forEach(function (entry) {
+          var cat = entry.catalogue;
+          var allBooks = entry.books;
+          var isExpanded = Boolean(expandedCatalogues[cat.id]);
+          var shownBooks = (allBooks.length > 4 && !isExpanded) ? allBooks.slice(0, 4) : allBooks;
+          var catIcon = ICONS[cat.icon] || ICONS.book;
+          var countLabel = allBooks.length === 1 ? '1 Book' : (allBooks.length + ' Books');
+
+          var booksHtml = '';
+          shownBooks.forEach(function (book) {
+            var initials = getBookInitials(book.title);
+            var thumbHtml = '';
+            if (hasValidImgSrc(book.coverImage)) {
+              var src = safeImgSrc(book.coverImage, book.title, initials, accentColor);
+              thumbHtml = '<img class="catalogue-book-thumb" src="' + escapeHTML(src) + '" alt="' + escapeHTML(book.title || 'Book cover') + '" loading="lazy" onerror="' + renderBookFallbackAttr(book.title, initials, accentColor) + '">';
+            } else {
+              thumbHtml = '<div class="catalogue-book-spine" aria-hidden="true">' + escapeHTML(initials) + '</div>';
+            }
+
+            var ratingVal = Number(book.rating) || 0;
+            var ratingHtml = ratingVal > 0
+              ? '<span class="catalogue-book-rating" aria-label="Rated ' + escapeHTML(String(ratingVal)) + ' out of 5">&#9733; ' + escapeHTML(String(ratingVal)) + '</span>'
+              : '';
+
+            var extUrl = normalizeUrl(book.externalLink || '');
+            var linkHtml = extUrl
+              ? '<a href="' + escapeHTML(extUrl) + '" target="_blank" rel="noopener noreferrer" class="catalogue-book-link">View Book ' + ICONS.external + '</a>'
+              : '';
+
+            booksHtml +=
+              '<article class="catalogue-book-item">' +
+              thumbHtml +
+              '<div class="catalogue-book-body">' +
+              '<div class="catalogue-book-top">' +
+              '<h4 class="catalogue-book-title">' + escapeHTML(book.title || '') + '</h4>' +
+              ratingHtml +
+              '</div>' +
+              (book.author && book.author.trim() ? '<div class="catalogue-book-author">by ' + escapeHTML(book.author) + '</div>' : '') +
+              (book.shortDescription && book.shortDescription.trim() ? '<p class="catalogue-book-desc">' + escapeHTML(book.shortDescription) + '</p>' : '') +
+              linkHtml +
+              '</div>' +
+              '</article>';
+          });
+
+          var expandBtnHtml = '';
+          if (allBooks.length > 4) {
+            expandBtnHtml =
+              '<button type="button" class="catalogue-expand-btn" data-catalogue-expand="' + escapeHTML(cat.id || '') + '" aria-expanded="' + (isExpanded ? 'true' : 'false') + '">' +
+              (isExpanded ? 'Show fewer &#8593;' : ('Show all ' + allBooks.length + ' recommendations &#8595;')) +
+              '</button>';
+          }
+
+          cardsHtml +=
+            '<section class="catalogue-card" aria-label="' + escapeHTML(cat.name || 'Genre Catalogue') + '">' +
+            '<div class="catalogue-card-header">' +
+            '<div class="catalogue-card-top">' +
+            '<div class="catalogue-card-title-group">' +
+            '<div class="catalogue-card-icon" aria-hidden="true">' + catIcon + '</div>' +
+            '<h3 class="catalogue-card-title">' + escapeHTML(cat.name || '') + '</h3>' +
+            '</div>' +
+            '<span class="catalogue-count-pill">' + escapeHTML(countLabel) + '</span>' +
+            '</div>' +
+            (cat.tagline && cat.tagline.trim() ? '<p class="catalogue-card-tagline">' + escapeHTML(cat.tagline) + '</p>' : '') +
+            '</div>' +
+            '<div class="catalogue-books-list">' + booksHtml + '</div>' +
+            expandBtnHtml +
+            '</section>';
+        });
+
+        var html =
+          '<div class="section-header-block">' +
+          (catCfg.chapterLabel && catCfg.chapterLabel.trim() ? '<div class="section-chapter-label">' + escapeHTML(catCfg.chapterLabel) + '</div>' : '') +
+          '<h2 class="section-heading">' + escapeHTML(catCfg.sectionTitle || 'Reading Lists by Genre') + '</h2>' +
+          (catCfg.sectionSubtitle && catCfg.sectionSubtitle.trim() ? '<p class="section-subheading">' + escapeHTML(catCfg.sectionSubtitle) + '</p>' : '') +
+          '</div>' +
+          filterHtml +
+          '<div class="catalogue-grid ' + gridClass + '">' + cardsHtml + '</div>';
+
+        setHTML('catalogue-mount', html);
+      }
+      // @@ANCHOR:CATALOGUE_RENDERER_END
+
+      // @@ANCHOR:WEBSERIES_RENDERER_START
+      // ---- WEB SERIES SUGGESTIONS RENDER (CHAPTER V) ----
+      function renderWebSeries(d) {
+        var data = d || SITE_DATA;
+        if (!data) return;
+        var wsCfg = data.webSeries || {};
+        var visibleItems = getVisibleWebSeries(data);
+        if (visibleItems.length === 0) {
+          hide('section-webseries');
+          setHTML('webseries-mount', '');
+          return;
+        }
+
+        show('section-webseries');
+        var accentColor = getAccentColor();
+
+        var uniqueGenres = [];
+        visibleItems.forEach(function (item) {
+          var g = (item.genre || '').trim();
+          if (g && uniqueGenres.indexOf(g) === -1) uniqueGenres.push(g);
+        });
+
+        if (wsFilter !== 'All' && uniqueGenres.indexOf(wsFilter) === -1) {
+          wsFilter = 'All';
+          wsPage = 1;
+        }
+
+        var filterHtml = '';
+        if (uniqueGenres.length >= 2) {
+          var pills = '<button type="button" class="filter-pill ws-filter-pill' + (wsFilter === 'All' ? ' active' : '') + '" data-ws-filter="All" aria-pressed="' + (wsFilter === 'All' ? 'true' : 'false') + '">All</button>';
+          uniqueGenres.forEach(function (g) {
+            var isAct = wsFilter === g;
+            pills += '<button type="button" class="filter-pill ws-filter-pill' + (isAct ? ' active' : '') + '" data-ws-filter="' + escapeHTML(g) + '" aria-pressed="' + (isAct ? 'true' : 'false') + '">' + escapeHTML(g) + '</button>';
+          });
+          filterHtml = '<div class="ws-filter-pills" role="group" aria-label="Filter web series by genre">' + pills + '</div>';
+        }
+
+        var filtered = wsFilter === 'All'
+          ? visibleItems
+          : visibleItems.filter(function (item) { return (item.genre || '').trim() === wsFilter; });
+
+        var shown = filtered.slice(0, wsPage * WS_PAGE_SIZE);
+        var countClass = shown.length === 1 ? 'count-1' : (shown.length === 2 ? 'count-2' : 'count-3');
+
+        var cardsHtml = '';
+        shown.forEach(function (item) {
+          var initials = getBookInitials(item.title);
+          var hasPlatform = item.platform && item.platform.trim();
+          var hasMeta = item.metaTag && item.metaTag.trim();
+
+          var posterHtml = '';
+          if (hasValidImgSrc(item.posterImage)) {
+            var src = safeImgSrc(item.posterImage, item.title, initials, accentColor);
+            posterHtml =
+              '<img class="ws-poster-img" src="' + escapeHTML(src) + '" alt="' + escapeHTML(item.title || 'Series poster') + '" loading="lazy" onerror="' + renderBookFallbackAttr(item.title, initials, accentColor) + '">' +
+              '<div class="ws-poster-vignette" aria-hidden="true"></div>';
+          } else {
+            posterHtml =
+              '<div class="ws-poster-fallback" aria-hidden="true">' +
+              '<div class="ws-poster-fallback-icon">' + ICONS.film + '</div>' +
+              '<div class="ws-poster-fallback-mono">' + escapeHTML(initials) + '</div>' +
+              '</div>';
+          }
+
+          var ratingVal = Number(item.rating) || 0;
+          var ratingHtml = ratingVal > 0
+            ? '<span class="ws-card-rating" aria-label="Rated ' + escapeHTML(String(ratingVal)) + ' out of 5">&#9733; ' + escapeHTML(String(ratingVal)) + '</span>'
+            : '';
+
+          var watchUrl = normalizeUrl(item.watchLink || '');
+          var linkLabel = (item.watchLinkLabel && item.watchLinkLabel.trim()) ? item.watchLinkLabel.trim() : 'View Details';
+          var footerHtml = watchUrl
+            ? '<div class="ws-card-footer"><a href="' + escapeHTML(watchUrl) + '" target="_blank" rel="noopener noreferrer" class="ws-card-link">' + escapeHTML(linkLabel) + ' ' + ICONS.external + '</a></div>'
+            : '';
+
+          cardsHtml +=
+            '<article class="ws-card">' +
+            '<div class="ws-poster-wrap">' +
+            posterHtml +
+            (hasPlatform ? '<span class="ws-pill-platform">' + escapeHTML(item.platform) + '</span>' : '') +
+            (hasMeta ? '<span class="ws-pill-meta">' + escapeHTML(item.metaTag) + '</span>' : '') +
+            '</div>' +
+            '<div class="ws-card-body">' +
+            ((item.genre && item.genre.trim()) || ratingHtml
+              ? '<div class="ws-card-meta-row">' +
+                (item.genre && item.genre.trim() ? '<span class="ws-card-genre">' + escapeHTML(item.genre) + '</span>' : '<span></span>') +
+                ratingHtml +
+                '</div>'
+              : '') +
+            '<h3 class="ws-card-title">' + escapeHTML(item.title || '') + '</h3>' +
+            (item.shortDescription && item.shortDescription.trim() ? '<p class="ws-card-desc">' + escapeHTML(item.shortDescription) + '</p>' : '<div class="ws-card-desc"></div>') +
+            footerHtml +
+            '</div>' +
+            '</article>';
+        });
+
+        var loadMoreHtml = '';
+        if (filtered.length > shown.length) {
+          loadMoreHtml =
+            '<div class="ws-load-more-wrap">' +
+            '<button type="button" class="btn btn-outline" id="ws-load-more-btn">Show More Series</button>' +
+            '</div>';
+        }
+
+        var html =
+          '<div class="section-header-block">' +
+          (wsCfg.chapterLabel && wsCfg.chapterLabel.trim() ? '<div class="section-chapter-label">' + escapeHTML(wsCfg.chapterLabel) + '</div>' : '') +
+          '<h2 class="section-heading">' + escapeHTML(wsCfg.sectionTitle || 'Web Series Worth Bingeing') + '</h2>' +
+          (wsCfg.sectionSubtitle && wsCfg.sectionSubtitle.trim() ? '<p class="section-subheading">' + escapeHTML(wsCfg.sectionSubtitle) + '</p>' : '') +
+          '</div>' +
+          filterHtml +
+          '<div class="ws-grid ' + countClass + '">' + cardsHtml + '</div>' +
+          loadMoreHtml;
+
+        setHTML('webseries-mount', html);
+      }
+      // @@ANCHOR:WEBSERIES_RENDERER_END
+
       // ---- CONTACT SECTION RENDER ----
       function renderContact(d) {
         var c = d.contact || {};
@@ -5834,6 +6944,8 @@
           { sectionId: 'section-featured', navId: 'nav-featured' },
           { sectionId: 'section-instagram', navId: 'nav-instagram' },
           { sectionId: 'section-blog', navId: 'nav-blog' },
+          { sectionId: 'section-catalogue', navId: 'nav-catalogue' },
+          { sectionId: 'section-webseries', navId: 'nav-webseries' },
           { sectionId: 'section-contact', navId: 'nav-contact' }
         ];
         var currentNavId = 'nav-home';
@@ -5998,6 +7110,62 @@
           });
         }
 
+        var catalogueMount = el('catalogue-mount');
+        if (catalogueMount) {
+          catalogueMount.addEventListener('click', function (e) {
+            var filterPill = e.target.closest('.catalogue-filter-pill');
+            if (filterPill) {
+              var nextId = filterPill.getAttribute('data-catalogue-filter') || 'all';
+              if (nextId !== catalogueFilter) {
+                catalogueFilter = nextId;
+                renderCatalogue(SITE_DATA);
+                if (typeof window.refreshScrollReveal === 'function') {
+                  window.refreshScrollReveal();
+                }
+              }
+              return;
+            }
+            var expandBtn = e.target.closest('.catalogue-expand-btn');
+            if (expandBtn) {
+              var catId = expandBtn.getAttribute('data-catalogue-expand');
+              if (catId) {
+                expandedCatalogues[catId] = !expandedCatalogues[catId];
+                renderCatalogue(SITE_DATA);
+                if (typeof window.refreshScrollReveal === 'function') {
+                  window.refreshScrollReveal();
+                }
+              }
+            }
+          });
+        }
+
+        var wsMount = el('webseries-mount');
+        if (wsMount) {
+          wsMount.addEventListener('click', function (e) {
+            var filterPill = e.target.closest('.ws-filter-pill');
+            if (filterPill) {
+              var nextGenre = filterPill.getAttribute('data-ws-filter') || 'All';
+              if (nextGenre !== wsFilter) {
+                wsFilter = nextGenre;
+                wsPage = 1;
+                renderWebSeries(SITE_DATA);
+                if (typeof window.refreshScrollReveal === 'function') {
+                  window.refreshScrollReveal();
+                }
+              }
+              return;
+            }
+            var lmBtn = e.target.closest('#ws-load-more-btn');
+            if (lmBtn) {
+              wsPage += 1;
+              renderWebSeries(SITE_DATA);
+              if (typeof window.refreshScrollReveal === 'function') {
+                window.refreshScrollReveal();
+              }
+            }
+          });
+        }
+
         var contactMount = el('contact-mount');
         if (contactMount) {
           contactMount.addEventListener('click', function (e) {
@@ -6037,6 +7205,13 @@
       // ---- MASTER RENDER ENTRY ----
       function renderAll(data) {
         SITE_DATA = deepMerge(DEFAULT_SITE_DATA, data || {});
+        normalizeCatalogues(SITE_DATA);
+        if (!SITE_DATA.webSeries || typeof SITE_DATA.webSeries !== 'object') {
+          SITE_DATA.webSeries = deepMerge(DEFAULT_SITE_DATA.webSeries, {});
+        }
+        if (!Array.isArray(SITE_DATA.webSeries.items)) {
+          SITE_DATA.webSeries.items = [];
+        }
         applyThemeAndPalette(SITE_DATA);
         renderHeader(SITE_DATA);
         renderHero(SITE_DATA);
@@ -6044,6 +7219,8 @@
         renderFeaturedBooks(SITE_DATA);
         renderInstagram(SITE_DATA);
         renderBlog(SITE_DATA);
+        renderCatalogue(SITE_DATA);
+        renderWebSeries(SITE_DATA);
         renderContact(SITE_DATA);
         renderFooter(SITE_DATA);
         renderChapterNumerals(SITE_DATA);
@@ -6063,6 +7240,8 @@
         renderFeaturedBooks: renderFeaturedBooks,
         renderInstagram: renderInstagram,
         renderBlog: renderBlog,
+        renderCatalogue: renderCatalogue,
+        renderWebSeries: renderWebSeries,
         renderContact: renderContact,
         renderFooter: renderFooter,
         renderChapterNumerals: renderChapterNumerals,
@@ -6518,7 +7697,7 @@
 
       // ---- SCROLL REVEAL ----
       var REVEAL_SELECTOR =
-        '.book-card:not(.reveal), .blog-card:not(.reveal), .contact-card:not(.reveal), ' +
+        '.book-card:not(.reveal), .blog-card:not(.reveal), .catalogue-card:not(.reveal), .ws-card:not(.reveal), .contact-card:not(.reveal), ' +
         '.ig-fallback-card:not(.reveal), .ig-card-frame:not(.reveal), .usp-card:not(.reveal), ' +
         '.hero-bio:not(.reveal), .review-policy-block:not(.reveal), .contact-pitch:not(.reveal)';
 
@@ -6767,6 +7946,8 @@
           { id: 'books', label: 'Featured Books', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>' },
           { id: 'instagram', label: 'Instagram Feed', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>' },
           { id: 'blog', label: 'Blog / Journal', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>' },
+          { id: 'catalogue', label: 'Book Catalogue', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><line x1="9" y1="7" x2="16" y2="7"/><line x1="9" y1="11" x2="16" y2="11"/></svg>' },
+          { id: 'webseries', label: 'Web Series', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>' },
           { id: 'contact', label: 'Contacts & Footer', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>' },
           { id: 'cloud', label: 'Cloud & Backup', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>' }
         ];
@@ -7511,6 +8692,7 @@
             '<meta name="twitter:card" content="summary_large_image">\n' +
             '<meta name="twitter:title" content="' + title + '">\n' +
             '<meta name="twitter:description" content="' + desc + '">\n' +
+            '<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ctext y=\'.9em\' font-size=\'90\'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">\n' +
             '<!-- @@SOCIAL_META_END -->';
         }
 
@@ -7662,11 +8844,19 @@
               reader.onload = function () {
                 try {
                   var parsed = JSON.parse(String(reader.result || ''));
-                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || (!parsed.meta && !parsed.hero && !parsed.featuredBooks)) {
+                  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || (!parsed.meta && !parsed.hero && !parsed.featuredBooks && !parsed.catalogues && !parsed.webSeries)) {
                     showToast('This file does not look like a valid portfolio backup.', 'error');
                     return;
                   }
                   draft = deepMerge(DEFAULT_SITE_DATA, parsed);
+                  if (draft.catalogues && Array.isArray(draft.catalogues.items)) {
+                    draft.catalogues.items.forEach(function (c) {
+                      if (c && !Array.isArray(c.books)) c.books = [];
+                    });
+                  }
+                  if (draft.webSeries && !Array.isArray(draft.webSeries.items)) {
+                    draft.webSeries.items = [];
+                  }
                   setDirty(true);
                   showToast('Backup loaded into editor! Click "Save & Publish" to apply live.', 'success');
                   renderActiveTab();
@@ -7725,7 +8915,7 @@
           if (activeTab === 'contact') { renderContactTab(panel); return; }
           if (activeTab === 'cloud') { renderCloudTab(panel); return; }
 
-          if (activeTab === 'books' || activeTab === 'instagram' || activeTab === 'blog') {
+          if (activeTab === 'books' || activeTab === 'instagram' || activeTab === 'blog' || activeTab === 'catalogue' || activeTab === 'webseries') {
             if (window.AdminManagers && typeof window.AdminManagers.renderTab === 'function') {
               window.AdminManagers.renderTab(activeTab, panel, draft, {
                 markDirty: function () { setDirty(true); },
@@ -7768,6 +8958,7 @@
           draft = res.data || draft;
           setDirty(false);
           PublicRenderer.renderAll(draft);
+          renderActiveTab();
           showToast(res.mode === 'supabase' ? 'Published live to Supabase!' : 'Saved locally in Demo Mode!', 'success');
           return true;
         }
@@ -7924,6 +9115,9 @@
       var editingBookId = null;
       var editingIgId = null;
       var editingPostId = null;
+      var expandedCatalogueId = null;
+      var editingCatBookId = null;
+      var editingWebSeriesId = null;
       var manualReadTimeIds = {};
 
       function el(id) { return document.getElementById(id); }
@@ -8910,6 +10104,773 @@
         }
       }
 
+      // @@ANCHOR:CATALOGUE_ADMIN_JS_START
+      // ================================================================
+      // TAB: CURATED BOOK CATALOGUE MANAGER (CHAPTER IV)
+      // ================================================================
+      var CATALOGUE_ICONS = [
+        { id: 'book', label: 'Book' },
+        { id: 'feather', label: 'Feather' },
+        { id: 'sparkles', label: 'Sparkles' },
+        { id: 'compass', label: 'Compass' },
+        { id: 'heart', label: 'Heart' },
+        { id: 'flame', label: 'Flame' }
+      ];
+
+      function renderCatalogueTab(panel, draft, helpers) {
+        if (!draft.catalogues || typeof draft.catalogues !== 'object') {
+          draft.catalogues = { enabled: true, navLabel: 'Catalogue', chapterLabel: 'CURATED BOOK CATALOGUE', sectionTitle: 'Reading Lists by Genre', sectionSubtitle: '', items: [] };
+        }
+        if (!Array.isArray(draft.catalogues.items)) draft.catalogues.items = [];
+        var cfg = draft.catalogues;
+        var items = cfg.items;
+        items.forEach(function (c) { if (c && !Array.isArray(c.books)) c.books = []; });
+
+        var mono = (draft.meta && draft.meta.brandMonogram) ? draft.meta.brandMonogram : 'AM';
+
+        if (expandedCatalogueId && !items.some(function (c) { return c.id === expandedCatalogueId; })) {
+          expandedCatalogueId = null;
+          editingCatBookId = null;
+        }
+
+        var ratingOptions = [
+          { val: 0, label: 'Unrated (Hide)' },
+          { val: 0.5, label: '0.5 ★' },
+          { val: 1, label: '1.0 ★' },
+          { val: 1.5, label: '1.5 ★' },
+          { val: 2, label: '2.0 ★' },
+          { val: 2.5, label: '2.5 ★' },
+          { val: 3, label: '3.0 ★' },
+          { val: 3.5, label: '3.5 ★' },
+          { val: 4, label: '4.0 ★' },
+          { val: 4.5, label: '4.5 ★' },
+          { val: 5, label: '5.0 ★' }
+        ];
+
+        var listHtml = items.map(function (cat, cIdx) {
+          var isExpanded = expandedCatalogueId === cat.id;
+          var books = Array.isArray(cat.books) ? cat.books : [];
+          var visibleBooksCount = books.filter(function (b) { return b && b.visible && b.title && b.title.trim(); }).length;
+
+          var statusBadge = '';
+          if (!cat.visible) {
+            statusBadge = '<span class="admin-vis-badge is-hidden">Hidden</span>';
+          } else if (visibleBooksCount === 0) {
+            statusBadge = '<span class="admin-vis-badge is-warn">No visible books — hidden on site</span>';
+          } else {
+            statusBadge = '<span class="admin-vis-badge">Visible</span>';
+          }
+
+          var countText = books.length === 1 ? '1 book' : (books.length + ' books');
+
+          var expandedHtml = '';
+          if (isExpanded) {
+            if (editingCatBookId && !books.some(function (b) { return b.id === editingCatBookId; })) {
+              editingCatBookId = null;
+            }
+
+            var iconOpts = CATALOGUE_ICONS.map(function (ic) {
+              return '<option value="' + ic.id + '"' + ((cat.icon || 'book') === ic.id ? ' selected' : '') + '>' + escapeHTML(ic.label) + '</option>';
+            }).join('');
+
+            var booksListHtml = books.map(function (book, bIdx) {
+              var isBookEdit = editingCatBookId === book.id;
+              var bRating = Number(book.rating) || 0;
+              var bRatingText = bRating > 0 ? ('★ ' + bRating) : 'Unrated';
+              var bVisBadge = book.visible
+                ? '<span class="admin-vis-badge">Visible</span>'
+                : '<span class="admin-vis-badge is-hidden">Hidden</span>';
+
+              var bookFormHtml = '';
+              if (isBookEdit) {
+                var descVal = String(book.shortDescription || '');
+                var rOpts = ratingOptions.map(function (ro) {
+                  return '<option value="' + ro.val + '"' + (bRating === ro.val ? ' selected' : '') + '>' + escapeHTML(ro.label) + '</option>';
+                }).join('');
+
+                var moveSelectHtml = '';
+                if (items.length >= 2) {
+                  var catOpts = items.map(function (targetCat, tIdx) {
+                    return '<option value="' + tIdx + '"' + (tIdx === cIdx ? ' selected' : '') + '>' + escapeHTML(targetCat.name || ('Catalogue #' + (tIdx + 1))) + '</option>';
+                  }).join('');
+                  moveSelectHtml =
+                    '<div class="admin-field">' +
+                    '<label class="admin-label" for="cbk-move-cat-' + cIdx + '-' + bIdx + '">Move to Another Catalogue</label>' +
+                    '<select class="admin-select" id="cbk-move-cat-' + cIdx + '-' + bIdx + '" data-cbk-reassign="' + cIdx + ':' + bIdx + '">' + catOpts + '</select>' +
+                    '</div>';
+                }
+
+                bookFormHtml =
+                  '<div class="admin-cat-book-form">' +
+                  '<div class="admin-grid-2">' +
+                  '<div class="admin-field"><label class="admin-label" for="cbk-title-' + cIdx + '-' + bIdx + '">Book Title *</label>' +
+                  '<input class="admin-input" id="cbk-title-' + cIdx + '-' + bIdx + '" type="text" required data-cbk-field="title" data-cbk-pos="' + cIdx + ':' + bIdx + '" value="' + escapeHTML(book.title || '') + '" placeholder="Book Title">' +
+                  (!(book.title && book.title.trim()) ? '<span class="admin-hint" style="color:#b91c1c;">Title is required for this book to appear on the site.</span>' : '') +
+                  '</div>' +
+                  '<div class="admin-field"><label class="admin-label" for="cbk-author-' + cIdx + '-' + bIdx + '">Author</label>' +
+                  '<input class="admin-input" id="cbk-author-' + cIdx + '-' + bIdx + '" type="text" data-cbk-field="author" data-cbk-pos="' + cIdx + ':' + bIdx + '" value="' + escapeHTML(book.author || '') + '" placeholder="Author Name"></div>' +
+                  '</div>' +
+
+                  '<div class="admin-field">' +
+                  '<div class="admin-char-row">' +
+                  '<label class="admin-label" for="cbk-desc-' + cIdx + '-' + bIdx + '">Very Short Description</label>' +
+                  '<span class="admin-char-count" id="cbk-count-' + cIdx + '-' + bIdx + '">' + descVal.length + ' / 200</span>' +
+                  '</div>' +
+                  '<textarea class="admin-textarea" id="cbk-desc-' + cIdx + '-' + bIdx + '" rows="2" maxlength="200" data-cbk-field="shortDescription" data-cbk-pos="' + cIdx + ':' + bIdx + '" data-count-id="cbk-count-' + cIdx + '-' + bIdx + '" style="min-height:72px;" placeholder="One crisp sentence explaining why readers will love this book...">' + escapeHTML(descVal) + '</textarea>' +
+                  '</div>' +
+
+                  '<div class="admin-grid-2">' +
+                  '<div class="admin-field"><label class="admin-label" for="cbk-rate-' + cIdx + '-' + bIdx + '">Star Rating</label>' +
+                  '<select class="admin-select" id="cbk-rate-' + cIdx + '-' + bIdx + '" data-cbk-rate="' + cIdx + ':' + bIdx + '">' + rOpts + '</select></div>' +
+                  '<div class="admin-field"><label class="admin-label" for="cbk-ext-' + cIdx + '-' + bIdx + '">External Link (Optional)</label>' +
+                  '<input class="admin-input" id="cbk-ext-' + cIdx + '-' + bIdx + '" type="url" data-cbk-field="externalLink" data-cbk-pos="' + cIdx + ':' + bIdx + '" value="' + escapeHTML(book.externalLink || '') + '" placeholder="https://www.goodreads.com/..."></div>' +
+                  '</div>' +
+
+                  '<div class="admin-field"><span class="admin-label">Cover Image (Optional)</span>' +
+                  '<span class="admin-hint">Optional — leave blank to display a classic mini book cover.</span>' +
+                  '<div class="admin-media-row">' +
+                  '<img class="admin-media-preview" id="cbk-prev-' + cIdx + '-' + bIdx + '" src="' + escapeHTML(book.coverImage || '') + '" alt="Cover preview" onerror="' + renderBookFallbackAttr(book.title || 'Book', mono, '#1F3B2E') + '">' +
+                  '<div class="admin-media-controls">' +
+                  '<input class="admin-input" id="cbk-url-' + cIdx + '-' + bIdx + '" type="url" data-cbk-field="coverImage" data-cbk-pos="' + cIdx + ':' + bIdx + '" data-preview-id="cbk-prev-' + cIdx + '-' + bIdx + '" value="' + escapeHTML(book.coverImage || '') + '" placeholder="https://... or upload cover">' +
+                  '<div class="flex gap-2" style="flex-wrap:wrap;">' +
+                  '<label class="admin-upload-label"><span>Upload Cover (Auto-Compressed)</span>' +
+                  '<input type="file" accept="image/*" class="visually-hidden" data-cbk-upload="' + cIdx + ':' + bIdx + '"></label>' +
+                  ((book.coverImage && book.coverImage.trim()) ? '<button type="button" class="btn btn-ghost admin-btn-sm" data-cbk-clearimg="' + cIdx + ':' + bIdx + '">Remove Image</button>' : '') +
+                  '</div></div></div></div>' +
+
+                  moveSelectHtml +
+                  '</div>';
+              }
+
+              return '<div class="admin-cat-book-row">' +
+                '<div class="admin-list-item-bar">' +
+                '<div class="admin-item-summary">' +
+                '<img class="admin-item-thumb" id="cbk-thumb-' + cIdx + '-' + bIdx + '" src="' + escapeHTML(book.coverImage || '') + '" alt="" onerror="' + renderBookFallbackAttr(book.title || 'Book', mono, '#1F3B2E') + '">' +
+                '<div class="admin-item-info">' +
+                '<span class="admin-list-item-title">' + escapeHTML(book.title || 'Untitled Book') + '</span>' +
+                '<span class="admin-item-sub">' + escapeHTML(book.author || 'Unknown Author') + ' &bull; ' + escapeHTML(bRatingText) + '</span>' +
+                bVisBadge +
+                '</div></div>' +
+                '<div class="admin-item-actions">' +
+                '<button type="button" class="admin-icon-btn" data-cbk-edit="' + cIdx + ':' + escapeHTML(book.id) + '">' + (isBookEdit ? 'Done' : 'Edit') + '</button>' +
+                '<button type="button" class="admin-icon-btn" data-cbk-move="-1" data-cbk-pos="' + cIdx + ':' + bIdx + '"' + (bIdx === 0 ? ' disabled' : '') + ' aria-label="Move book up">↑ Up</button>' +
+                '<button type="button" class="admin-icon-btn" data-cbk-move="1" data-cbk-pos="' + cIdx + ':' + bIdx + '"' + (bIdx === books.length - 1 ? ' disabled' : '') + ' aria-label="Move book down">↓ Down</button>' +
+                '<button type="button" class="admin-icon-btn" data-cbk-vis="' + cIdx + ':' + bIdx + '">' + (book.visible ? 'Hide' : 'Show') + '</button>' +
+                '<button type="button" class="admin-icon-btn btn-icon-danger" data-cbk-del="' + cIdx + ':' + bIdx + '">Delete</button>' +
+                '</div></div>' +
+                bookFormHtml +
+                '</div>';
+            }).join('');
+
+            expandedHtml =
+              '<div class="admin-cat-expanded">' +
+              '<div class="admin-grid-2">' +
+              '<div class="admin-field"><label class="admin-label" for="cat-name-' + cIdx + '">Catalogue Name</label>' +
+              '<input class="admin-input" id="cat-name-' + cIdx + '" type="text" data-cat-field="name" data-cat-idx="' + cIdx + '" value="' + escapeHTML(cat.name || '') + '" placeholder="Fiction"></div>' +
+              '<div class="admin-field"><label class="admin-label" for="cat-icon-' + cIdx + '">Icon</label>' +
+              '<select class="admin-select" id="cat-icon-' + cIdx + '" data-cat-field="icon" data-cat-idx="' + cIdx + '">' + iconOpts + '</select></div>' +
+              '</div>' +
+              '<div class="admin-field"><label class="admin-label" for="cat-tag-' + cIdx + '">Short Tagline (Optional)</label>' +
+              '<input class="admin-input" id="cat-tag-' + cIdx + '" type="text" data-cat-field="tagline" data-cat-idx="' + cIdx + '" value="' + escapeHTML(cat.tagline || '') + '" placeholder="Evocative storytelling and unforgettable prose."></div>' +
+
+              '<div class="admin-cat-nested">' +
+              '<div class="admin-card-header" style="padding-bottom:var(--space-2);">' +
+              '<div><div class="admin-label">Books in &ldquo;' + escapeHTML(cat.name || 'Catalogue') + '&rdquo; (' + books.length + ')</div>' +
+              '<span class="admin-hint">Add quick recommendations below. Drag-free reorder &amp; move across genres.</span></div>' +
+              '<button type="button" class="btn btn-primary admin-btn-sm" data-cbk-add="' + cIdx + '">+ Add Book to ' + escapeHTML(cat.name || 'Catalogue') + '</button>' +
+              '</div>' +
+              (booksListHtml || '<p class="admin-hint">No books in this catalogue yet. Click "+ Add Book" to add your first suggestion.</p>') +
+              '</div>' +
+              '</div>';
+          }
+
+          return '<div class="admin-list-item">' +
+            '<div class="admin-list-item-bar">' +
+            '<div class="admin-item-info">' +
+            '<span class="admin-list-item-title" id="cat-head-title-' + cIdx + '">' + escapeHTML(cat.name || 'Untitled Catalogue') + '</span>' +
+            '<span class="admin-item-sub">' + escapeHTML(countText) + (cat.tagline && cat.tagline.trim() ? (' &bull; ' + escapeHTML(cat.tagline)) : '') + '</span>' +
+            statusBadge +
+            '</div>' +
+            '<div class="admin-item-actions">' +
+            '<button type="button" class="admin-icon-btn" data-cat-expand="' + escapeHTML(cat.id) + '">' + (isExpanded ? 'Collapse' : 'Manage Books') + '</button>' +
+            '<button type="button" class="admin-icon-btn" data-cat-move="-1" data-cat-idx="' + cIdx + '"' + (cIdx === 0 ? ' disabled' : '') + ' aria-label="Move catalogue up">↑ Up</button>' +
+            '<button type="button" class="admin-icon-btn" data-cat-move="1" data-cat-idx="' + cIdx + '"' + (cIdx === items.length - 1 ? ' disabled' : '') + ' aria-label="Move catalogue down">↓ Down</button>' +
+            '<button type="button" class="admin-icon-btn" data-cat-vis="' + cIdx + '">' + (cat.visible ? 'Hide' : 'Show') + '</button>' +
+            '<button type="button" class="admin-icon-btn btn-icon-danger" data-cat-del="' + cIdx + '">Delete</button>' +
+            '</div></div>' +
+            expandedHtml +
+            '</div>';
+        }).join('');
+
+        panel.innerHTML =
+          '<div class="admin-card">' +
+          '<div class="admin-card-header"><div><h2 class="admin-card-title">Book Catalogue Section Settings</h2><p class="admin-card-subtitle">Displayed as Chapter IV below Reading Journal. Hides automatically if disabled or empty.</p></div></div>' +
+          '<label class="admin-switch-row" for="cat-enabled"><div><div class="admin-label">Show Curated Book Catalogue Section</div></div>' +
+          '<input class="admin-switch-input" id="cat-enabled" type="checkbox"' + (cfg.enabled ? ' checked' : '') + '></label>' +
+          '<div class="admin-grid-2">' +
+          '<div class="admin-field"><label class="admin-label" for="cat-nav">Navigation Label</label><input class="admin-input" id="cat-nav" type="text" value="' + escapeHTML(cfg.navLabel || '') + '" placeholder="Catalogue"></div>' +
+          '<div class="admin-field"><label class="admin-label" for="cat-chapter">Chapter Label</label><input class="admin-input" id="cat-chapter" type="text" value="' + escapeHTML(cfg.chapterLabel || '') + '"></div>' +
+          '</div>' +
+          '<div class="admin-field"><label class="admin-label" for="cat-title">Section Title</label><input class="admin-input" id="cat-title" type="text" value="' + escapeHTML(cfg.sectionTitle || '') + '"></div>' +
+          '<div class="admin-field"><label class="admin-label" for="cat-sub">Section Subtitle</label><textarea class="admin-textarea" id="cat-sub">' + escapeHTML(cfg.sectionSubtitle || '') + '</textarea></div>' +
+          '</div>' +
+
+          '<div class="admin-card">' +
+          '<div class="admin-card-header"><div><h2 class="admin-card-title">Genre Catalogues (' + items.length + ')</h2><p class="admin-card-subtitle">Group quick recommendations by genre, mood, or theme.</p></div>' +
+          '<button type="button" class="btn btn-primary admin-btn-sm" id="cat-add-btn">+ Add New Catalogue</button></div>' +
+          '<div class="admin-list-stack">' + (listHtml || '<p class="admin-hint">No catalogues yet. Click "+ Add New Catalogue" to create your first genre list.</p>') + '</div>' +
+          '</div>';
+
+        // Section setting bindings
+        var catEn = el('cat-enabled');
+        if (catEn) catEn.addEventListener('change', function () { cfg.enabled = catEn.checked; helpers.markDirty(); });
+        var catNav = el('cat-nav');
+        if (catNav) catNav.addEventListener('input', function () { cfg.navLabel = catNav.value; helpers.markDirty(); });
+        var catCh = el('cat-chapter');
+        if (catCh) catCh.addEventListener('input', function () { cfg.chapterLabel = catCh.value; helpers.markDirty(); });
+        var catTi = el('cat-title');
+        if (catTi) catTi.addEventListener('input', function () { cfg.sectionTitle = catTi.value; helpers.markDirty(); });
+        var catSu = el('cat-sub');
+        if (catSu) catSu.addEventListener('input', function () { cfg.sectionSubtitle = catSu.value; helpers.markDirty(); });
+
+        // Add Catalogue
+        var addCatBtn = el('cat-add-btn');
+        if (addCatBtn) {
+          addCatBtn.addEventListener('click', function () {
+            var newId = generateId('cat');
+            items.push({
+              id: newId,
+              visible: true,
+              name: 'New Genre',
+              tagline: '',
+              icon: 'book',
+              books: []
+            });
+            expandedCatalogueId = newId;
+            editingCatBookId = null;
+            helpers.markDirty();
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        }
+
+        // Parent Catalogue Actions
+        panel.querySelectorAll('[data-cat-expand]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-cat-expand');
+            expandedCatalogueId = (expandedCatalogueId === id) ? null : id;
+            editingCatBookId = null;
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-cat-move]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-cat-idx'), 10);
+            var delta = parseInt(btn.getAttribute('data-cat-move'), 10);
+            if (moveItem(items, idx, delta)) {
+              helpers.markDirty();
+              renderCatalogueTab(panel, draft, helpers);
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-cat-vis]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-cat-idx'), 10);
+            items[idx].visible = !items[idx].visible;
+            helpers.markDirty();
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-cat-del]').forEach(function (btn) {
+          btn.addEventListener('click', async function () {
+            var idx = parseInt(btn.getAttribute('data-cat-del'), 10);
+            var cat = items[idx];
+            if (!cat) return;
+            var bookCount = Array.isArray(cat.books) ? cat.books.length : 0;
+            var ok = await helpers.showConfirmDialog({
+              title: 'Delete Catalogue?',
+              message: 'Delete "' + (cat.name || 'this catalogue') + '" and all ' + bookCount + ' book(s) inside it? This cannot be undone.',
+              confirmText: 'Delete Catalogue',
+              danger: true
+            });
+            if (ok) {
+              if (cat.id === expandedCatalogueId) {
+                expandedCatalogueId = null;
+                editingCatBookId = null;
+              }
+              items.splice(idx, 1);
+              helpers.markDirty();
+              renderCatalogueTab(panel, draft, helpers);
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-cat-field]').forEach(function (inp) {
+          var ev = inp.tagName === 'SELECT' ? 'change' : 'input';
+          inp.addEventListener(ev, function () {
+            var idx = parseInt(inp.getAttribute('data-cat-idx'), 10);
+            var f = inp.getAttribute('data-cat-field');
+            if (!items[idx]) return;
+            items[idx][f] = inp.value;
+            helpers.markDirty();
+            if (f === 'name' && el('cat-head-title-' + idx)) {
+              el('cat-head-title-' + idx).textContent = inp.value || 'Untitled Catalogue';
+            }
+          });
+        });
+
+        // Add Nested Book
+        panel.querySelectorAll('[data-cbk-add]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var cIdx = parseInt(btn.getAttribute('data-cbk-add'), 10);
+            var cat = items[cIdx];
+            if (!cat) return;
+            var newId = generateId('cbook');
+            cat.books.unshift({
+              id: newId,
+              visible: true,
+              title: 'New Recommendation',
+              author: '',
+              shortDescription: '',
+              coverImage: '',
+              rating: 4.5,
+              externalLink: ''
+            });
+            expandedCatalogueId = cat.id;
+            editingCatBookId = newId;
+            helpers.markDirty();
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        function parsePos(str) {
+          var parts = String(str || '').split(':');
+          return [parseInt(parts[0], 10), parseInt(parts[1], 10)];
+        }
+
+        // Nested Book Actions
+        panel.querySelectorAll('[data-cbk-edit]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var raw = btn.getAttribute('data-cbk-edit') || '';
+            var colon = raw.indexOf(':');
+            var bId = colon >= 0 ? raw.slice(colon + 1) : '';
+            editingCatBookId = (editingCatBookId === bId) ? null : bId;
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-move]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var pos = parsePos(btn.getAttribute('data-cbk-pos'));
+            var delta = parseInt(btn.getAttribute('data-cbk-move'), 10);
+            var cat = items[pos[0]];
+            if (cat && moveItem(cat.books, pos[1], delta)) {
+              helpers.markDirty();
+              renderCatalogueTab(panel, draft, helpers);
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-vis]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var pos = parsePos(btn.getAttribute('data-cbk-vis'));
+            var book = items[pos[0]] && items[pos[0]].books[pos[1]];
+            if (!book) return;
+            book.visible = !book.visible;
+            helpers.markDirty();
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-del]').forEach(function (btn) {
+          btn.addEventListener('click', async function () {
+            var pos = parsePos(btn.getAttribute('data-cbk-del'));
+            var cat = items[pos[0]];
+            var book = cat && cat.books[pos[1]];
+            if (!book) return;
+            var ok = await helpers.showConfirmDialog({
+              title: 'Delete Book Recommendation?',
+              message: 'Remove "' + (book.title || 'this book') + '" from "' + (cat.name || 'Catalogue') + '"?',
+              confirmText: 'Delete',
+              danger: true
+            });
+            if (ok) {
+              if (book.id === editingCatBookId) editingCatBookId = null;
+              cat.books.splice(pos[1], 1);
+              helpers.markDirty();
+              renderCatalogueTab(panel, draft, helpers);
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-field]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            var pos = parsePos(inp.getAttribute('data-cbk-pos'));
+            var f = inp.getAttribute('data-cbk-field');
+            var book = items[pos[0]] && items[pos[0]].books[pos[1]];
+            if (!book) return;
+            book[f] = inp.value;
+            helpers.markDirty();
+
+            var countId = inp.getAttribute('data-count-id');
+            if (countId && el(countId)) {
+              el(countId).textContent = inp.value.length + ' / 200';
+            }
+            var prevId = inp.getAttribute('data-preview-id');
+            if (prevId && el(prevId)) el(prevId).src = inp.value;
+            if (f === 'coverImage' && el('cbk-thumb-' + pos[0] + '-' + pos[1])) {
+              el('cbk-thumb-' + pos[0] + '-' + pos[1]).src = inp.value;
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-rate]').forEach(function (sel) {
+          sel.addEventListener('change', function () {
+            var pos = parsePos(sel.getAttribute('data-cbk-rate'));
+            var book = items[pos[0]] && items[pos[0]].books[pos[1]];
+            if (!book) return;
+            book.rating = parseFloat(sel.value) || 0;
+            helpers.markDirty();
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-upload]').forEach(function (fi) {
+          fi.addEventListener('change', async function () {
+            var pos = parsePos(fi.getAttribute('data-cbk-upload'));
+            var file = fi.files && fi.files[0];
+            var book = items[pos[0]] && items[pos[0]].books[pos[1]];
+            if (!file || !book) return;
+            helpers.showToast('Compressing cover image...', 'info');
+            var res = await helpers.uploadImage(file, book.title || 'catalogue-book');
+            fi.value = '';
+            if (!res.ok) {
+              helpers.showToast(res.error || 'Upload failed.', 'error');
+              return;
+            }
+            book.coverImage = res.url;
+            helpers.markDirty();
+            helpers.showToast(res.mode === 'supabase' ? 'Cover uploaded to Supabase!' : 'Cover compressed in Demo Mode!', 'success');
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-clearimg]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var pos = parsePos(btn.getAttribute('data-cbk-clearimg'));
+            var book = items[pos[0]] && items[pos[0]].books[pos[1]];
+            if (!book) return;
+            book.coverImage = '';
+            helpers.markDirty();
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-cbk-reassign]').forEach(function (sel) {
+          sel.addEventListener('change', function () {
+            var pos = parsePos(sel.getAttribute('data-cbk-reassign'));
+            var targetIdx = parseInt(sel.value, 10);
+            var srcCat = items[pos[0]];
+            var dstCat = items[targetIdx];
+            if (!srcCat || !dstCat || pos[0] === targetIdx) return;
+            var movedArr = srcCat.books.splice(pos[1], 1);
+            if (movedArr.length === 0) return;
+            var movedBook = movedArr[0];
+            dstCat.books.unshift(movedBook);
+            expandedCatalogueId = dstCat.id;
+            editingCatBookId = movedBook.id;
+            helpers.markDirty();
+            helpers.showToast('Moved "' + (movedBook.title || 'Book') + '" to "' + (dstCat.name || 'Catalogue') + '"', 'success');
+            renderCatalogueTab(panel, draft, helpers);
+          });
+        });
+      }
+      // @@ANCHOR:CATALOGUE_ADMIN_JS_END
+
+      // @@ANCHOR:WEBSERIES_ADMIN_JS_START
+      // ================================================================
+      // TAB: WEB SERIES SUGGESTIONS MANAGER (CHAPTER V)
+      // ================================================================
+      var WS_PLATFORMS = ['Netflix', 'Prime Video', 'Apple TV+', 'JioHotstar', 'SonyLIV', 'HBO / Max', 'YouTube', 'MUBI'];
+
+      function renderWebSeriesTab(panel, draft, helpers) {
+        if (!draft.webSeries || typeof draft.webSeries !== 'object') {
+          draft.webSeries = { enabled: true, navLabel: 'Web Series', chapterLabel: 'SCREEN & STORYTELLING', sectionTitle: 'Web Series Worth Bingeing', sectionSubtitle: '', items: [] };
+        }
+        if (!Array.isArray(draft.webSeries.items)) draft.webSeries.items = [];
+        var cfg = draft.webSeries;
+        var items = cfg.items;
+        var mono = (draft.meta && draft.meta.brandMonogram) ? draft.meta.brandMonogram : 'AM';
+
+        if (editingWebSeriesId && !items.some(function (w) { return w.id === editingWebSeriesId; })) {
+          editingWebSeriesId = null;
+        }
+
+        var ratingOptions = [
+          { val: 0, label: 'Unrated (Hide)' },
+          { val: 0.5, label: '0.5 ★' },
+          { val: 1, label: '1.0 ★' },
+          { val: 1.5, label: '1.5 ★' },
+          { val: 2, label: '2.0 ★' },
+          { val: 2.5, label: '2.5 ★' },
+          { val: 3, label: '3.0 ★' },
+          { val: 3.5, label: '3.5 ★' },
+          { val: 4, label: '4.0 ★' },
+          { val: 4.5, label: '4.5 ★' },
+          { val: 5, label: '5.0 ★' }
+        ];
+
+        var platformOptsHtml = WS_PLATFORMS.map(function (pl) {
+          return '<option value="' + escapeHTML(pl) + '">';
+        }).join('');
+
+        var listHtml = items.map(function (ws, idx) {
+          var isEditing = editingWebSeriesId === ws.id;
+          var visLabel = ws.visible ? 'Visible' : 'Hidden';
+          var ratingVal = Number(ws.rating) || 0;
+          var ratingText = ratingVal > 0 ? ('★ ' + ratingVal) : 'Unrated';
+          var subParts = [];
+          if (ws.platform && ws.platform.trim()) subParts.push(ws.platform.trim());
+          if (ws.genre && ws.genre.trim()) subParts.push(ws.genre.trim());
+          subParts.push(ratingText);
+
+          var editorHtml = '';
+          if (isEditing) {
+            var descVal = String(ws.shortDescription || '');
+            var rOpts = ratingOptions.map(function (ro) {
+              return '<option value="' + ro.val + '"' + (ratingVal === ro.val ? ' selected' : '') + '>' + escapeHTML(ro.label) + '</option>';
+            }).join('');
+
+            editorHtml =
+              '<div class="admin-list-stack" style="border-top:1px solid var(--border-subtle);padding-top:var(--space-4);">' +
+              '<div class="admin-grid-2">' +
+              '<div class="admin-field"><label class="admin-label" for="ws-title-' + idx + '">Series Title *</label>' +
+              '<input class="admin-input" id="ws-title-' + idx + '" type="text" required data-ws-field="title" data-ws-idx="' + idx + '" value="' + escapeHTML(ws.title || '') + '" placeholder="Dark">' +
+              (!(ws.title && ws.title.trim()) ? '<span class="admin-hint" style="color:#b91c1c;">Title is required for this series to appear on the site.</span>' : '') +
+              '</div>' +
+              '<div class="admin-field"><label class="admin-label" for="ws-platform-' + idx + '">Streaming Platform</label>' +
+              '<input class="admin-input" id="ws-platform-' + idx + '" list="ws-platform-suggestions" type="text" data-ws-field="platform" data-ws-idx="' + idx + '" value="' + escapeHTML(ws.platform || '') + '" placeholder="Netflix"></div>' +
+              '<div class="admin-field"><label class="admin-label" for="ws-genre-' + idx + '">Genre</label>' +
+              '<input class="admin-input" id="ws-genre-' + idx + '" type="text" data-ws-field="genre" data-ws-idx="' + idx + '" value="' + escapeHTML(ws.genre || '') + '" placeholder="Sci-Fi Mystery"></div>' +
+              '<div class="admin-field"><label class="admin-label" for="ws-meta-' + idx + '">Short Tag / Seasons (Optional)</label>' +
+              '<input class="admin-input" id="ws-meta-' + idx + '" type="text" data-ws-field="metaTag" data-ws-idx="' + idx + '" value="' + escapeHTML(ws.metaTag || '') + '" placeholder="3 Seasons or Book Adaptation"></div>' +
+              '</div>' +
+
+              '<div class="admin-field"><label class="admin-label" for="ws-rate-' + idx + '">Star Rating</label>' +
+              '<select class="admin-select" id="ws-rate-' + idx + '" data-ws-rate="' + idx + '">' + rOpts + '</select></div>' +
+
+              '<div class="admin-field"><span class="admin-label">Poster / Still Image (Optional)</span>' +
+              '<span class="admin-hint">Optional — leave blank for a classic cinema card.</span>' +
+              '<div class="admin-media-row">' +
+              '<img class="admin-media-preview" id="ws-prev-' + idx + '" src="' + escapeHTML(ws.posterImage || '') + '" alt="Poster preview" onerror="' + renderBookFallbackAttr(ws.title || 'Series', mono, '#1F3B2E') + '">' +
+              '<div class="admin-media-controls">' +
+              '<input class="admin-input" id="ws-poster-url-' + idx + '" type="url" data-ws-field="posterImage" data-ws-idx="' + idx + '" data-preview-id="ws-prev-' + idx + '" value="' + escapeHTML(ws.posterImage || '') + '" placeholder="https://... or upload poster">' +
+              '<div class="flex gap-2" style="flex-wrap:wrap;">' +
+              '<label class="admin-upload-label"><span>Upload Poster (Auto-Compressed)</span>' +
+              '<input type="file" accept="image/*" class="visually-hidden" data-ws-upload="' + idx + '"></label>' +
+              ((ws.posterImage && ws.posterImage.trim()) ? '<button type="button" class="btn btn-ghost admin-btn-sm" data-ws-clearimg="' + idx + '">Remove Image</button>' : '') +
+              '</div></div></div></div>' +
+
+              '<div class="admin-field">' +
+              '<div class="admin-char-row">' +
+              '<label class="admin-label" for="ws-desc-' + idx + '">Short Description</label>' +
+              '<span class="admin-char-count" id="ws-count-' + idx + '">' + descVal.length + ' / 260</span>' +
+              '</div>' +
+              '<textarea class="admin-textarea" id="ws-desc-' + idx + '" rows="3" maxlength="260" data-ws-field="shortDescription" data-ws-idx="' + idx + '" data-count-id="ws-count-' + idx + '" placeholder="Why book lovers will enjoy this series...">' + escapeHTML(descVal) + '</textarea>' +
+              '</div>' +
+
+              '<div class="admin-grid-2">' +
+              '<div class="admin-field"><label class="admin-label" for="ws-link-' + idx + '">Watch / Info Link (Optional)</label>' +
+              '<input class="admin-input" id="ws-link-' + idx + '" type="url" data-ws-field="watchLink" data-ws-idx="' + idx + '" value="' + escapeHTML(ws.watchLink || '') + '" placeholder="https://www.imdb.com/..."></div>' +
+              '<div class="admin-field"><label class="admin-label" for="ws-linklbl-' + idx + '">Button Label</label>' +
+              '<input class="admin-input" id="ws-linklbl-' + idx + '" type="text" data-ws-field="watchLinkLabel" data-ws-idx="' + idx + '" value="' + escapeHTML(ws.watchLinkLabel || '') + '" placeholder="View Details"></div>' +
+              '</div>' +
+              '</div>';
+          }
+
+          return '<div class="admin-list-item">' +
+            '<div class="admin-list-item-bar">' +
+            '<div class="admin-item-summary">' +
+            '<img class="admin-item-thumb admin-item-thumb-sq" id="ws-thumb-' + idx + '" src="' + escapeHTML(ws.posterImage || '') + '" alt="" onerror="' + renderBookFallbackAttr(ws.title || 'TV', mono, '#1F3B2E') + '">' +
+            '<div class="admin-item-info">' +
+            '<span class="admin-list-item-title" id="ws-head-title-' + idx + '">' + escapeHTML(ws.title || 'Untitled Series') + '</span>' +
+            '<span class="admin-item-sub">' + escapeHTML(subParts.join(' • ')) + '</span>' +
+            '<span class="admin-vis-badge' + (ws.visible ? '' : ' is-hidden') + '">' + visLabel + '</span>' +
+            '</div></div>' +
+            '<div class="admin-item-actions">' +
+            '<button type="button" class="admin-icon-btn" data-ws-edit="' + escapeHTML(ws.id) + '">' + (isEditing ? 'Done' : 'Edit') + '</button>' +
+            '<button type="button" class="admin-icon-btn" data-ws-move="-1" data-ws-idx="' + idx + '"' + (idx === 0 ? ' disabled' : '') + ' aria-label="Move series up">↑ Up</button>' +
+            '<button type="button" class="admin-icon-btn" data-ws-move="1" data-ws-idx="' + idx + '"' + (idx === items.length - 1 ? ' disabled' : '') + ' aria-label="Move series down">↓ Down</button>' +
+            '<button type="button" class="admin-icon-btn" data-ws-vis="' + idx + '">' + (ws.visible ? 'Hide' : 'Show') + '</button>' +
+            '<button type="button" class="admin-icon-btn btn-icon-danger" data-ws-del="' + idx + '">Delete</button>' +
+            '</div></div>' +
+            editorHtml +
+            '</div>';
+        }).join('');
+
+        panel.innerHTML =
+          '<datalist id="ws-platform-suggestions">' + platformOptsHtml + '</datalist>' +
+          '<div class="admin-card">' +
+          '<div class="admin-card-header"><div><h2 class="admin-card-title">Web Series Section Settings</h2><p class="admin-card-subtitle">Displayed as Chapter V below Book Catalogue. Hides automatically if disabled or empty.</p></div></div>' +
+          '<label class="admin-switch-row" for="ws-enabled"><div><div class="admin-label">Show Web Series Suggestions Section</div></div>' +
+          '<input class="admin-switch-input" id="ws-enabled" type="checkbox"' + (cfg.enabled ? ' checked' : '') + '></label>' +
+          '<div class="admin-grid-2">' +
+          '<div class="admin-field"><label class="admin-label" for="ws-nav">Navigation Label</label><input class="admin-input" id="ws-nav" type="text" value="' + escapeHTML(cfg.navLabel || '') + '" placeholder="Web Series"></div>' +
+          '<div class="admin-field"><label class="admin-label" for="ws-chapter">Chapter Label</label><input class="admin-input" id="ws-chapter" type="text" value="' + escapeHTML(cfg.chapterLabel || '') + '"></div>' +
+          '</div>' +
+          '<div class="admin-field"><label class="admin-label" for="ws-title">Section Title</label><input class="admin-input" id="ws-title" type="text" value="' + escapeHTML(cfg.sectionTitle || '') + '"></div>' +
+          '<div class="admin-field"><label class="admin-label" for="ws-sub">Section Subtitle</label><textarea class="admin-textarea" id="ws-sub">' + escapeHTML(cfg.sectionSubtitle || '') + '</textarea></div>' +
+          '</div>' +
+
+          '<div class="admin-card">' +
+          '<div class="admin-card-header"><div><h2 class="admin-card-title">Recommended Series (' + items.length + ')</h2><p class="admin-card-subtitle">Share binge-worthy shows and book-to-screen adaptations.</p></div>' +
+          '<button type="button" class="btn btn-primary admin-btn-sm" id="ws-add-btn">+ Add Web Series</button></div>' +
+          '<div class="admin-list-stack">' + (listHtml || '<p class="admin-hint">No web series yet. Click "+ Add Web Series" to add your first pick.</p>') + '</div>' +
+          '</div>';
+
+        var wsEn = el('ws-enabled');
+        if (wsEn) wsEn.addEventListener('change', function () { cfg.enabled = wsEn.checked; helpers.markDirty(); });
+        var wsNav = el('ws-nav');
+        if (wsNav) wsNav.addEventListener('input', function () { cfg.navLabel = wsNav.value; helpers.markDirty(); });
+        var wsCh = el('ws-chapter');
+        if (wsCh) wsCh.addEventListener('input', function () { cfg.chapterLabel = wsCh.value; helpers.markDirty(); });
+        var wsTi = el('ws-title');
+        if (wsTi) wsTi.addEventListener('input', function () { cfg.sectionTitle = wsTi.value; helpers.markDirty(); });
+        var wsSu = el('ws-sub');
+        if (wsSu) wsSu.addEventListener('input', function () { cfg.sectionSubtitle = wsSu.value; helpers.markDirty(); });
+
+        var addBtn = el('ws-add-btn');
+        if (addBtn) {
+          addBtn.addEventListener('click', function () {
+            var newId = generateId('ws');
+            items.unshift({
+              id: newId,
+              visible: true,
+              title: 'New Web Series',
+              platform: '',
+              genre: '',
+              metaTag: '',
+              rating: 4.5,
+              posterImage: '',
+              shortDescription: '',
+              watchLink: '',
+              watchLinkLabel: 'View Details'
+            });
+            editingWebSeriesId = newId;
+            helpers.markDirty();
+            renderWebSeriesTab(panel, draft, helpers);
+          });
+        }
+
+        panel.querySelectorAll('[data-ws-edit]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var id = btn.getAttribute('data-ws-edit');
+            editingWebSeriesId = (editingWebSeriesId === id) ? null : id;
+            renderWebSeriesTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-move]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-ws-idx'), 10);
+            var delta = parseInt(btn.getAttribute('data-ws-move'), 10);
+            if (moveItem(items, idx, delta)) {
+              helpers.markDirty();
+              renderWebSeriesTab(panel, draft, helpers);
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-vis]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-ws-vis'), 10);
+            items[idx].visible = !items[idx].visible;
+            helpers.markDirty();
+            renderWebSeriesTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-del]').forEach(function (btn) {
+          btn.addEventListener('click', async function () {
+            var idx = parseInt(btn.getAttribute('data-ws-del'), 10);
+            var title = (items[idx] && items[idx].title) || 'this series';
+            var ok = await helpers.showConfirmDialog({
+              title: 'Delete Web Series?',
+              message: 'Remove "' + title + '" from your recommendations?',
+              confirmText: 'Delete',
+              danger: true
+            });
+            if (ok) {
+              if (items[idx] && items[idx].id === editingWebSeriesId) editingWebSeriesId = null;
+              items.splice(idx, 1);
+              helpers.markDirty();
+              renderWebSeriesTab(panel, draft, helpers);
+            }
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-field]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            var idx = parseInt(inp.getAttribute('data-ws-idx'), 10);
+            var f = inp.getAttribute('data-ws-field');
+            if (!items[idx]) return;
+            items[idx][f] = inp.value;
+            helpers.markDirty();
+
+            if (f === 'title' && el('ws-head-title-' + idx)) {
+              el('ws-head-title-' + idx).textContent = inp.value || 'Untitled Series';
+            }
+            var countId = inp.getAttribute('data-count-id');
+            if (countId && el(countId)) {
+              el(countId).textContent = inp.value.length + ' / 260';
+            }
+            var prevId = inp.getAttribute('data-preview-id');
+            if (prevId && el(prevId)) el(prevId).src = inp.value;
+            if (f === 'posterImage' && el('ws-thumb-' + idx)) el('ws-thumb-' + idx).src = inp.value;
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-rate]').forEach(function (sel) {
+          sel.addEventListener('change', function () {
+            var idx = parseInt(sel.getAttribute('data-ws-rate'), 10);
+            if (!items[idx]) return;
+            items[idx].rating = parseFloat(sel.value) || 0;
+            helpers.markDirty();
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-upload]').forEach(function (fi) {
+          fi.addEventListener('change', async function () {
+            var idx = parseInt(fi.getAttribute('data-ws-upload'), 10);
+            var file = fi.files && fi.files[0];
+            if (!file || !items[idx]) return;
+            helpers.showToast('Compressing poster image...', 'info');
+            var res = await helpers.uploadImage(file, items[idx].title || 'webseries-poster');
+            fi.value = '';
+            if (!res.ok) {
+              helpers.showToast(res.error || 'Upload failed.', 'error');
+              return;
+            }
+            items[idx].posterImage = res.url;
+            helpers.markDirty();
+            helpers.showToast(res.mode === 'supabase' ? 'Poster uploaded to Supabase!' : 'Poster compressed in Demo Mode!', 'success');
+            renderWebSeriesTab(panel, draft, helpers);
+          });
+        });
+
+        panel.querySelectorAll('[data-ws-clearimg]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-ws-clearimg'), 10);
+            if (!items[idx]) return;
+            items[idx].posterImage = '';
+            helpers.markDirty();
+            renderWebSeriesTab(panel, draft, helpers);
+          });
+        });
+      }
+      // @@ANCHOR:WEBSERIES_ADMIN_JS_END
+
       // ================================================================
       // PUBLIC ENTRY HOOK FOR AdminCore
       // ================================================================
@@ -8921,6 +10882,10 @@
             renderInstagramTab(panel, draft, helpers);
           } else if (tabId === 'blog') {
             renderBlogTab(panel, draft, helpers);
+          } else if (tabId === 'catalogue') {
+            renderCatalogueTab(panel, draft, helpers);
+          } else if (tabId === 'webseries') {
+            renderWebSeriesTab(panel, draft, helpers);
           }
         }
       };
